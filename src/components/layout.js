@@ -6,46 +6,41 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
 import "./layout.css"
 
+import Drawer from "./Drawer"
+import Navbar from "./Navbar"
+
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const [drawerVisible, setDrawerVisible] = React.useState(false)
+
+  const handleOpenSidebar = () => {
+    setDrawerVisible(true)
+  }
+
+  const handleCloseSidebar = () => {
+    setDrawerVisible(false)
+  }
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          height: "100vh",
+          overflow: "hidden",
+          transform: drawerVisible
+            ? "perspective(800px) translateZ(-80px)"
+            : "none",
+          transition: "transform 400ms  ease-out",
         }}
       >
+        <Navbar open={handleOpenSidebar}></Navbar>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
+
+      <Drawer visible={drawerVisible} closeDrawer={handleCloseSidebar}></Drawer>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

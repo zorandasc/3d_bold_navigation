@@ -1,20 +1,20 @@
 import React from "react"
 
-const IndexPage = () => {
+const careers = () => {
   return (
     <div
       style={{
         height: "100vh",
-        background: "#9e87ce",
+        background: "#f25f5c",
         overflow: "hidden",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <h1 style={{ color: "white", fontSize: "5rem" }}>HOME PAGE</h1>
+      <h1 style={{ color: "white", fontSize: "5rem" }}>CAREERS</h1>
     </div>
   )
 }
 
-export default IndexPage
+export default careers

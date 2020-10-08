@@ -1,20 +1,20 @@
 import React from "react"
 
-const IndexPage = () => {
+const about = () => {
   return (
     <div
       style={{
         height: "100vh",
-        background: "#9e87ce",
+        background: "#e0cf75",
         overflow: "hidden",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <h1 style={{ color: "white", fontSize: "5rem" }}>HOME PAGE</h1>
+      <h1 style={{ color: "white", fontSize: "5rem" }}>ABOUT</h1>
     </div>
   )
 }
 
-export default IndexPage
+export default about
