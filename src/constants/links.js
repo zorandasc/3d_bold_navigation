@@ -12,7 +12,7 @@ export default [
     id: Math.random(),
     path: "/",
     text: "Intro",
-    icon: <FaHome style={{ backgroundColor: "transparent" }}></FaHome>,
+    icon: <FaHome></FaHome>,
   },
   {
     id: Math.random(),

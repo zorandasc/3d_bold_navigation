@@ -9,6 +9,7 @@ import React from "react"
 import "./layout.css"
 
 import Drawer from "./Drawer"
+
 import Navbar from "./Navbar"
 
 const Layout = ({ children }) => {

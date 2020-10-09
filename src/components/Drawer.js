@@ -15,7 +15,7 @@ const Drawer = ({ visible, closeDrawer }) => {
         position: "fixed",
         top: 0,
         right: 0,
-        width: "70%",
+        width: "75%",
         height: "100%",
         background: "white",
         boxShadow: "-4px 0 30px rgba(0,0,0,.2)",
@@ -26,11 +26,12 @@ const Drawer = ({ visible, closeDrawer }) => {
     >
       <div
         style={{
-          position: "relative",
-          display: "block",
-          height: "116px",
-          padding: "1.5em 0 0 6.25%",
-          paddingTop: "3em",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          height: "90px",
+          padding: "0 1.5rem",
+          textAlign: "center",
         }}
       >
         <h3
@@ -46,11 +47,6 @@ const Drawer = ({ visible, closeDrawer }) => {
         <button
           onClick={closeDrawer}
           style={{
-            position: "absolute",
-            right: "7.14%",
-            top: "50%",
-            transform: "translateY(-50%)",
-            bottom: "auto",
             width: "44px",
             height: "44px",
             color: "#5c4b51",
@@ -65,19 +61,20 @@ const Drawer = ({ visible, closeDrawer }) => {
         </button>
       </div>
 
-      <ul style={{ listStyle: "none" }}>
+      <ul style={{ listStyle: "none", width: "100%" }}>
         {links.map(item => {
           return (
             <li
               key={item.id}
               style={{
-                height: `calc((100vh - 116px)/3)`,
-                minHeight: "200px",
+                height: `calc((100vh - 90px)/3)`,
+                minHeight: "100px",
                 width: "50%",
                 float: "left",
                 border: "1px solid white",
                 borderTop: "none",
                 borderLeft: "none",
+                backgroundColor: "#f2f2f2",
               }}
             >
               <AniLink
@@ -106,11 +103,14 @@ const Drawer = ({ visible, closeDrawer }) => {
                     position: "absolute",
                     height: "64px",
                     width: "64px",
-                    top: "calc(50% - 56px)",
+                    top: "calc(50% - 48px)",
                     left: "50%",
                     transform: "translateX(-50%)",
-                    fontSize: "5rem",
+                    fontSize: "4.2rem",
                     color: "#9e87ce",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                 >
                   {item.icon}
@@ -120,10 +120,11 @@ const Drawer = ({ visible, closeDrawer }) => {
                     position: "absolute",
                     width: "100%",
                     left: 0,
-                    top: "calc(50% + 21px)",
+                    top: "calc(50% + 15px)",
                     fontWeight: "200",
-                    fontSize: "2.2rem",
+                    fontSize: "1.8rem",
                     fontStyle: "normal",
+                    color: "#5c4b51",
                   }}
                 >
                   {item.text}

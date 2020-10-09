@@ -8,7 +8,7 @@ const Navbar = ({ open }) => {
       style={{
         position: "fixed",
         zIndex: "103",
-        top: "12px",
+        top: "14px",
         right: "5%",
         width: "44px",
         height: "44px",
